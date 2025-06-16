@@ -5,25 +5,68 @@ const PreLoader = () => {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 flex items-center justify-center z-50">
       <div className="text-center">
-        {/* Animated Logo */}
+        {/* Exact Logo Recreation */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="relative mx-auto w-24 h-24">
+          <div className="relative mx-auto w-32 h-20">
+            {/* Main Container Shape - Orange/Red */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="w-full h-full bg-gradient-to-br from-orange-500 to-red-600 rounded-xl transform rotate-12 shadow-2xl"
-            />
+              animate={{ 
+                rotateY: [0, 15, -15, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              {/* Back face of container */}
+              <div className="absolute w-20 h-12 bg-gradient-to-br from-orange-600 to-red-700 transform skew-x-12 skew-y-3 shadow-lg"></div>
+              
+              {/* Front face of container */}
+              <div className="absolute w-20 h-12 bg-gradient-to-br from-orange-400 to-red-500 transform translate-x-2 translate-y-2 shadow-xl border border-orange-300"></div>
+              
+              {/* Top face of container */}
+              <div className="absolute w-20 h-4 bg-gradient-to-r from-orange-300 to-red-400 transform -skew-x-45 translate-y-2 shadow-md border-b border-orange-400"></div>
+              
+              {/* Right side face */}
+              <div className="absolute w-4 h-12 bg-gradient-to-b from-red-500 to-red-700 transform translate-x-20 translate-y-2 skew-y-12 shadow-lg"></div>
+            </motion.div>
+
+            {/* Blue Accent Element */}
             <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg transform -rotate-12 shadow-xl"
-            />
-            <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-lg shadow-inner"></div>
+              animate={{ 
+                x: [0, 5, -5, 0],
+                rotateZ: [0, 5, -5, 0]
+              }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-0 right-0"
+            >
+              {/* Blue geometric accent */}
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 transform rotate-45 shadow-lg border border-blue-500"></div>
+              <div className="absolute w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-700 transform -rotate-12 translate-x-1 translate-y-1 shadow-md"></div>
+            </motion.div>
+
+            {/* White accent elements */}
+            <div className="absolute w-3 h-3 bg-white rounded-sm top-4 left-8 shadow-sm opacity-90"></div>
+            <div className="absolute w-2 h-2 bg-white rounded-sm top-6 left-12 shadow-sm opacity-80"></div>
+
+            {/* Floating particles around logo */}
+            <motion.div
+              animate={{ 
+                rotate: 360,
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 pointer-events-none"
+            >
+              <div className="absolute w-1 h-1 bg-orange-400 rounded-full top-0 left-4 opacity-60"></div>
+              <div className="absolute w-1 h-1 bg-blue-400 rounded-full bottom-0 right-6 opacity-60"></div>
+              <div className="absolute w-1 h-1 bg-red-400 rounded-full top-2 right-2 opacity-60"></div>
+              <div className="absolute w-1 h-1 bg-orange-300 rounded-full bottom-2 left-2 opacity-60"></div>
+            </motion.div>
           </div>
         </motion.div>
 

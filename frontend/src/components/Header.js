@@ -40,19 +40,44 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Exact Logo Recreation */}
           <Link to="/" className="flex items-center space-x-3">
             <div className="flex items-center">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg transform rotate-12 shadow-lg"></div>
-                <div className="absolute -top-1 -right-1 w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-md transform -rotate-12"></div>
-                <div className="absolute top-2 left-2 w-6 h-6 bg-white rounded-sm"></div>
+              <div className="relative w-12 h-8">
+                {/* Main Container Shape - Orange/Red */}
+                <div className="absolute inset-0">
+                  {/* Back face of container */}
+                  <div className="absolute w-8 h-5 bg-gradient-to-br from-orange-600 to-red-700 transform skew-x-12 skew-y-3 shadow-md"></div>
+                  
+                  {/* Front face of container */}
+                  <div className="absolute w-8 h-5 bg-gradient-to-br from-orange-400 to-red-500 transform translate-x-1 translate-y-1 shadow-lg border border-orange-300"></div>
+                  
+                  {/* Top face of container */}
+                  <div className="absolute w-8 h-2 bg-gradient-to-r from-orange-300 to-red-400 transform -skew-x-45 translate-y-1 shadow-sm border-b border-orange-400"></div>
+                  
+                  {/* Right side face */}
+                  <div className="absolute w-2 h-5 bg-gradient-to-b from-red-500 to-red-700 transform translate-x-8 translate-y-1 skew-y-12 shadow-md"></div>
+                </div>
+
+                {/* Blue Accent Element */}
+                <div className="absolute -top-1 -right-1">
+                  {/* Blue geometric accent */}
+                  <div className="w-3 h-3 bg-gradient-to-br from-blue-600 to-blue-800 transform rotate-45 shadow-md border border-blue-500"></div>
+                  <div className="absolute w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-700 transform -rotate-12 translate-x-0.5 translate-y-0.5 shadow-sm"></div>
+                </div>
+
+                {/* White accent elements */}
+                <div className="absolute w-1 h-1 bg-white rounded-sm top-2 left-3 shadow-sm opacity-90"></div>
+                <div className="absolute w-1 h-1 bg-white rounded-sm top-2.5 left-4 shadow-sm opacity-80"></div>
               </div>
+              
               <div className="ml-3">
-                <h1 className="text-xl font-bold text-gray-800">
+                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                  isScrolled ? "text-gray-800" : "text-white"
+                }`}>
                   ENDLESS LOGISTICS
                 </h1>
-                <p className="text-xs text-orange-600 uppercase tracking-wider">
+                <p className="text-xs text-orange-600 uppercase tracking-wider font-medium">
                   Cargo Services
                 </p>
               </div>

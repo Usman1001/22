@@ -11,14 +11,37 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg transform rotate-12"></div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-blue-600 to-blue-800 rounded-md transform -rotate-12"></div>
-                <div className="absolute top-1.5 left-1.5 w-4 h-4 bg-white rounded-sm"></div>
+              <div className="relative w-10 h-6">
+                {/* Main Container Shape - Orange/Red */}
+                <div className="absolute inset-0">
+                  {/* Back face of container */}
+                  <div className="absolute w-6 h-4 bg-gradient-to-br from-orange-600 to-red-700 transform skew-x-12 skew-y-3 shadow-md"></div>
+                  
+                  {/* Front face of container */}
+                  <div className="absolute w-6 h-4 bg-gradient-to-br from-orange-400 to-red-500 transform translate-x-1 translate-y-0.5 shadow-lg border border-orange-300"></div>
+                  
+                  {/* Top face of container */}
+                  <div className="absolute w-6 h-1.5 bg-gradient-to-r from-orange-300 to-red-400 transform -skew-x-45 translate-y-0.5 shadow-sm border-b border-orange-400"></div>
+                  
+                  {/* Right side face */}
+                  <div className="absolute w-1.5 h-4 bg-gradient-to-b from-red-500 to-red-700 transform translate-x-6 translate-y-0.5 skew-y-12 shadow-md"></div>
+                </div>
+
+                {/* Blue Accent Element */}
+                <div className="absolute -top-0.5 -right-0.5">
+                  {/* Blue geometric accent */}
+                  <div className="w-2.5 h-2.5 bg-gradient-to-br from-blue-600 to-blue-800 transform rotate-45 shadow-md border border-blue-500"></div>
+                  <div className="absolute w-1.5 h-1.5 bg-gradient-to-br from-blue-500 to-blue-700 transform -rotate-12 translate-x-0.5 translate-y-0.5 shadow-sm"></div>
+                </div>
+
+                {/* White accent elements */}
+                <div className="absolute w-1 h-1 bg-white rounded-sm top-1.5 left-2 shadow-sm opacity-90"></div>
+                <div className="absolute w-0.5 h-0.5 bg-white rounded-sm top-2 left-3 shadow-sm opacity-80"></div>
               </div>
+              
               <div>
-                <h3 className="text-lg font-bold">ENDLESS LOGISTICS</h3>
-                <p className="text-xs text-orange-400 uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-white">ENDLESS LOGISTICS</h3>
+                <p className="text-xs text-orange-400 uppercase tracking-wider font-medium">
                   Cargo Services
                 </p>
               </div>
